@@ -1,7 +1,19 @@
+import { useEffect } from 'react';
+import instance from './axios-instance';
 import logo from './logo.svg';
 import './App.css';
+import constants from "./constants";
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    instance.get(`/planetary/apod?count=10&api_key=${constants.NASA_API_KEY}`)
+      .then(res => {
+        console.log(res.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
