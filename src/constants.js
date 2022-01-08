@@ -1,5 +1,5 @@
 const constants = {
-    NASA_API_KEY: 'JAoW4sEfl16VK75KDDRELv7pZ4V3T1WQO2Tu5Dfu',
+    NASA_API_KEY: 'fUKO5qbl7weXsYGRKtbunWLkc2ZQfYySfMjAa2Id',
 }
 
 export default constants;
