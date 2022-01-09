@@ -39,13 +39,13 @@ const App = () => {
             setLoading(false);
             setData(nasaImages);
         }
-    }, [nasaImages]);
+    }, []);
 
     return (
     <>
         {error && <p className="error-message">{error}</p>}
         {loading && <div className="loader"/>}
-        {data.length > 0 ? <Cards key="cards" data={data} /> : null}
+        {data && <Cards key="cards" data={data} />}
     </>
     );
 }

@@ -5,9 +5,9 @@ import '../App.css';
 
 const Cards = ({data}) => (
     <div className="card-container">
-        {data.length > 0 ? data.map(card => (
+        {data && data.map(card => (
             <Card key={card.id} {...card}/>
-        )) : null}
+        ))}
     </div>
 )
 

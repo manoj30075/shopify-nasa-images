@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import like from "../assets/images/like.svg";
 import dislike from "../assets/images/dislike.svg";
 import dataService from "../data-service/data-service";
@@ -11,6 +11,7 @@ const getText = text => {
 };
 
 const Card = ({title, description, date, url, id, liked}) => {
+  const [likedState, setLikedState] = useState(liked);
     return (
         <div className="card">
             <div className="card-image">
@@ -20,9 +21,10 @@ const Card = ({title, description, date, url, id, liked}) => {
                 <p>{date}</p>
                 <img
                     className="like-unlike"
-                    src={liked? like : dislike}
+                    src={likedState? like : dislike}
                     alt="like-unlike"
                     onClick={() => {
+                        setLikedState(!likedState);
                         const nasaImages = dataService.getNasaImagesFromSessionStorage();
                         nasaImages[id].liked = !liked;
                         dataService.saveNasaImagesToSessionStorage(nasaImages);
