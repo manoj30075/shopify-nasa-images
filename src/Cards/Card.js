@@ -39,7 +39,7 @@ const Card = ({title, description, date, url, id, liked}) => {
                         setLikedState(!likedState);
                         const nasaImages = dataService.getNasaImagesFromLocalStorage();
                         nasaImages[id].liked = !liked;
-                        dataService.getNasaImagesFromLocalStorage(nasaImages);
+                        dataService.saveNasaImagesToLocalStorage(nasaImages);
                     }}
                 />
             </div>
