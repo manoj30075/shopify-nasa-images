@@ -1,18 +1,18 @@
 class DataService {
-    addToSessionStorage = (key, value) => {
-        sessionStorage.setItem(key, JSON.stringify(value));
+    addToLocalStorage = (key, value) => {
+        localStorage.setItem(key, JSON.stringify(value));
     };
 
-    getFromSessionStorage = (key) => {
-        return JSON.parse(sessionStorage.getItem(key));
+    getFromLocalStorage = (key) => {
+        return JSON.parse(localStorage.getItem(key));
     };
 
-    saveNasaImagesToSessionStorage = (nasaImages) => {
-        this.addToSessionStorage('nasaImages', nasaImages);
+    saveNasaImagesToLocalStorage = (nasaImages) => {
+        this.addToLocalStorage('nasaImages', nasaImages);
     };
 
-    getNasaImagesFromSessionStorage = () => {
-        return this.getFromSessionStorage('nasaImages');
+    getNasaImagesFromLocalStorage = () => {
+        return this.getFromLocalStorage('nasaImages');
     };
 }
 

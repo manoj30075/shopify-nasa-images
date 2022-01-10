@@ -10,7 +10,7 @@ const transformCardData = (data) => (data.map((card, index) => ({
     title:card.title,
     description:card.explanation,
     url:card.url,
-    date:card.date,
+    date:new Date(card.date).toLocaleDateString(),
     id:index,
     liked:false
 })))
@@ -19,16 +19,16 @@ const App = () => {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState([]);
-    const nasaImages = dataServiceInstance.getNasaImagesFromSessionStorage();
+    const nasaImages = dataServiceInstance.getNasaImagesFromLocalStorage();
 
     useEffect(() => {
         if (!nasaImages) {
-            axiosInstance.get(`/planetary/apod?count=12&api_key=${constants.NASA_API_KEY}`)
+            axiosInstance.get(`/planetary/apod?count=50&api_key=${constants.NASA_API_KEY}`)
                 .then(res => {
                     setLoading(false);
                     const transformedData = transformCardData(res.data);
                     setData(transformedData);
-                    dataServiceInstance.saveNasaImagesToSessionStorage(transformedData);
+                    dataServiceInstance.saveNasaImagesToLocalStorage(transformedData);
                 })
                 .catch(err => {
                     setLoading(false);

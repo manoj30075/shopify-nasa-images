@@ -20,6 +20,9 @@ body {
   padding: 10px;
   border-radius: 10px;
 }
+.card:hover {
+  background: rgba(255, 255, 255, 0.93);
+}
 
 .card-image img {
   margin-top: 10px;
@@ -33,7 +36,14 @@ body {
 
 .like-unlike {
   height: 20px;
-  margin-left: 60%;
+  margin-left: 10%;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.share {
+  height: 20px;
+  margin-left: 45%;
   margin-top: 15px;
   cursor: pointer;
 }
@@ -63,4 +73,8 @@ body {
   border: 2px solid red;
   background: white;
   text-align: center;
+}
+
+.card-content-p {
+  text-align: justify;
 }
