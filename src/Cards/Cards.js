@@ -1,3 +1,8 @@
+/**
+ * Render the cards
+ * created on: 2022-01-08
+ * author: @manoj30075
+ */
 import React from 'react';
 
 import Card from './Card';

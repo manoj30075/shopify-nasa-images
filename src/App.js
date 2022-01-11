@@ -1,3 +1,8 @@
+/**
+ * Main rendering component which renders the whole app.
+ * created on: 2022-01-08
+ * author: @manoj30075
+ */
 import { useState, useEffect } from 'react';
 import axiosInstance from './axios-instance';
 import dataServiceInstance from "./data-service/data-service";
@@ -6,6 +11,7 @@ import Cards from './Cards/Cards';
 import constants from "./constants";
 import "./App.css"
 
+// translate the data from the server to the format required by the cards component
 const transformCardData = (data) => (data.map((card, index) => ({
     title:card.title,
     description:card.explanation,
